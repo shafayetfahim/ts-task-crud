@@ -1,0 +1,10 @@
+# JetBrains IDE
+.idea/
+.shelf/
+workspace.xml
+# Node.js
+node_modules/
+# TypeScript build output
+dist/
+# Environment variables
+.env
