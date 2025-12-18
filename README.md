@@ -1,2 +1,2 @@
 # Description
-TypeScript implementation of a quick task CRUD project so that adherence can be conducted at compile-time, allowing for early warnings and double-checks.
+I built a small task manager using TypeScript that enforces rules so tasks can only move through valid states, and I tested it to make sure those rules never break.
