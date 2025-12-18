@@ -1,4 +1,6 @@
 import { Task } from "../types/task.js";
+import { canTransition } from "../logic/transitions.js";
+
 
 let tasks: Task[] = [];
 let nextId = 1;
@@ -25,9 +27,15 @@ export function updateTask(
 {
     const task = tasks.find(t => t.id === id);
     if (!task) {throw new Error(`Task with id ${id} not found`)}
+    if (updates.status && !canTransition(task.status, updates.status)) {throw new Error(`Invalid status transition: ${task.status} → ${updates.status}`);}
     Object.assign(task, updates);
     return task;
 }
 
 
 export function deleteTask(id: number): void {tasks = tasks.filter(t => t.id !== id);}
+export function __resetForTests(): void
+{
+    tasks = [];
+    nextId = 1;
+}

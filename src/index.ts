@@ -9,6 +9,7 @@ const task1 = createTask("Learn TypeScript");
 const task2 = createTask("Build CRUD service", "Service-layer focused");
 
 updateTask(task1.id, { status: "in-progress" });
+updateTask(task1.id, { status: "done" });
 deleteTask(task2.id);
 
 console.log(readTasks());
